@@ -12,6 +12,10 @@ namespace ApiApp.Controllers
     [ApiController]
     public class PessoasController : ControllerBase
     {
+        //<sumary>
+        //API que busca e fornece acesso a dados de uma pessoa.
+        //</sumary>
+
         private readonly PessoaContext _context;
 
         public PessoasController(PessoaContext context)
@@ -75,7 +79,8 @@ namespace ApiApp.Controllers
         [HttpPatch("{id}")]
         public async Task<ActionResult> PatchPessoa(int id, [FromBody]JsonPatchDocument<Pessoa> patchPessoa)
         {
-            if (patchPessoa == null){
+            if (patchPessoa == null)
+            {
                 return BadRequest();
             }
 
